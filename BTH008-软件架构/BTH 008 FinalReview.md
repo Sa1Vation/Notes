@@ -26,18 +26,32 @@ The software architecture of a system is the set of structures needed to reason 
 
 ### What can you use a software architecture for (2P)   [Ch 2, pp25-33]
 
-- Enables/inhibits qualities of the implemented/executing system
-- Support impact analysis
-- Support prediction
-- Basis for decisions
-- Define policies, guidelines and constraints
-- Influence organisational efficiency
+1. An architecture will **inhibit or enable a system’s driving quality attributes**.
+2. The decisions made in an architecture allow you to **reason about and manage change as the system evolves**.
+3. The analysis of an architecture **enables early prediction of a system’s qualities**.
+4. A documented architecture **enhances communication among stakeholders**.
+5. The architecture is **a carrier of the earliest and hence most fundamental, hardest-to-change design decisions**.
+6. An architecture **defines a set of constraints on subsequent implementation**.
+7. The architecture **dictates the structure of an organization, or vice versa**.
+8. An architecture can **provide the basis for evolutionary prototyping**.
+9. An architecture is the **key artifact that allows the architect and project manager to reason about cost and schedule**.
+10. An architecture can be created as a transferable, reusable model that form the heart of a product line.
+11. Architecture-based development focuses attention on the assembly of components, rather than simply on their creation.
+12. By restricting design alternatives, architecture channels the creativity of developers, reducing design and system complexity.
+13. An architecture can be **the foundation for training a new team member**.
 
 ### software architecture influences from a technical perspective(2P) [Ch 2, pp25-33]
+
+- Organizational influence:
+  - 
 
 ## B: View Ch 18-20
 
 ### view definition and condition (8P) [From Lecture 3/4/5, ch18, pp331-341]
+
+A view is a representation of a set of system elements and relations among them—not all system elements, but those of a particular type.
+
+
 
 ## C: Quality Attribute Ch4-12, 14
 
@@ -45,11 +59,32 @@ The software architecture of a system is the set of structures needed to reason 
 
 ### quality attribute scenario (12P)  [Ch 4 – figure 4.1, 4.2, pp68-70]
 
+- Stimulus
+- Stimulus source
+- Response
+- Response mesure
+- Environment
+- Artifact
+
+![Screen Shot 2021-06-23 at 7.19.55 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-23 at 7.19.55 PM.png)
+
 ### coordination model decisions (4P)  [Ch 4.6 pp 73-74]
+
+- Identifying the elements of the system that must coordinate, or are prohibited from coordinating.
+- Determining the properties of the coordination
+  - such as timeliness, cur-rency, completeness, correctness, and consistency.
+- Choosing the communication mechanisms (between systems, between our system and external entities, between elements of our system) that realize those properties. 
+  - Important properties of the communication mechanisms include stateful versus stateless, synchronous versus asynchronous, guar-anteed versus nonguaranteed delivery, and performance-related properties such as throughput and latency.
 
 ### asynchronous communication (4P)  [Ch 4.6 pp 73-74]
 
 ### data-model (6P)  [ Ch 4.6 pp 74]
+
+- Choosing the major data abstractions, their operations, and their properties. 
+  - This includes determining how the data items are created, initialized, accessed, persisted, manipulated, translated, and destroyed.
+- Compiling metadata needed for consistent interpretation of the data.
+- Organizing the data. 
+  - This includes determining whether the data is going to be kept in a relational database, a collection of objects, or both. If both, then the mapping between the two different locations of the data must be determined.
 
  
 
@@ -57,7 +92,18 @@ The software architecture of a system is the set of structures needed to reason 
 
 ### Heartbeat- and/or Ping/Echo- tactics (4P)  [ Ch 5.2 pp 87-89] 
 
+- Ping/echo refers to an asynchronous request/response message pair ex-changed between nodes, used to determine reachability and the round-trip delay through the associated network path. But the echo also determines that the pinged component is alive and responding correctly.
+- Heartbeat is a fault detection mechanism that employs a periodic message exchange between a system monitor and a process being monitored. 
+
 ### availability tactics (6P)  [Ch 5.2 pp 87-95]
+
+- Detect faults
+- Recover from faults
+  - Preparation and Repair
+  - Reintroduction
+- Prevent faults
+
+![Screen Shot 2021-06-23 at 7.49.04 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-23 at 7.49.04 PM.png)
 
 ### fault tree analysis (6P)  [ Ch 5, pp 83]
 
@@ -67,7 +113,17 @@ The software architecture of a system is the set of structures needed to reason 
 
 ### modifiability tactic sub-category defer binding (6P) [Ch 7.2 pp 121-125]
 
+- Reduce Size of a Module
+- Increase Cohesion
+- Reduce Coupling
+- Defer Binding
+  - An architecture that is suitably equipped to accommodate modifications late in the life cycle will, on average, cost less than an architecture that forces the same modification to be made earlier. The preparedness of the system means that some costs will be zero, or very low, for late life-cycle modifications. This, however, neglects the cost of preparing the architecture for the late binding.
+
+![Screen Shot 2021-06-23 at 7.51.03 PM](/Users/salvation/Desktop/Screen Shot 2021-06-23 at 7.51.03 PM.png)
+
 ### the modifiability tactic Use an intermediary (4P)  [Ch 7.2 pp 121-125,]
+
+- Use an intermediary breaks a dependency.
 
  
 
@@ -75,13 +131,31 @@ The software architecture of a system is the set of structures needed to reason 
 
 ### a general scenario for a Testability quality(4P)  [Ch 10]
 
+![Screen Shot 2021-06-23 at 7.53.21 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-23 at 7.53.21 PM.png)
+
 ### testability tactics (8P)  [Ch 10 pp 168]
 
- 
+![Screen Shot 2021-06-23 at 7.53.53 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-23 at 7.53.53 PM.png) 
 
 ### ===Chapter 13===
 
 ### an architectural pattern (3P)  [Ch 13.1 pp 203-205]
+
+An architectural pattern
+
+- is a package of design decisions that is found in practice repeatedly,
+- has known properties that permit reuse, and 
+- describe a class of architectures.
+
+An architectural pattern establishes a relationship between: 
+
+- A context
+- A problem
+- A solution
+  - A set of element types (for example, data repositories, processes, and objects)
+  - A set of interaction mechanisms or connectors (for example, method calls, events, or message bus)
+  - A topological layout of the components
+  - A set of semantic constraints covering topology, element behavior, and interaction mechanisms
 
  
 
