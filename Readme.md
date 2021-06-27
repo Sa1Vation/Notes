@@ -10,7 +10,7 @@
 
 [BTH008-Software Architecture](./BTH008-软件架构/BTH008FinalReview.md )
 
-BTH009-Applied Software Project Management](./BTH009/BTH009FinalReview.md )
+[BTH009-Applied Software Project Management](./BTH009/BTH009FinalReview.md )
 
 [BTH010-Game Development](./BTH010/BTH010FinalReview.md )
 
