@@ -8,16 +8,16 @@ The software architecture of a system is the set of structures needed to reason 
 
 ### Structures categories (6P)  [Ch 1, pp10-17]
 
-1. *Module structures*
+1. *Module structures* - Module describes how the system is to be structured as a set of code or data units that have to be constructed or procured.
    - *Decomposition structure.*
    - *Uses structure*
    - *Layer structure*
    - *Class (or generalization) structure*
    - *Data model*
-2. *Component-and-connector*
+2. *Component-and-connector* - C&C describe how the system is to be structured as a set of elements that have runtime behavior (components) and interactions (connectors).
    - *Service structure*
    - *Concurrency structure*
-3. *Allocation structures*
+3. *Allocation structures* - Allocation structures describe how system will relate to non-software structures in its environment (CPU, file system etc.).
    - *Deployment structure*
    - *Implementation structure*
    - *Work assignment structure*
@@ -210,4 +210,78 @@ An architectural pattern establishes a relationship between:
 ### Run-time/Development time quality attribute (4P)  [From the lectures]
 
 ### the tactics with the correct quality (8P)  [Ch7/8/9/10, Performance, Modifiability, Security, Testability]
+
+#### Performance
+
+- Control Resource Demand
+  - Manage Sampling Rate
+  - Limit Event Response
+  - Prioritize Events
+  - Reduce Overhead
+  - Bound Execution Times
+  - Increase Resource Efficiency
+- Manage Resources
+  - Increase Resources
+  - Introduce Concurrency
+  - Maintain Multiple Copies of Computations
+  - Maintain Multiple Copies of Data
+  - Bound Queue Sizes
+  - Schedule Resources
+
+![Screen Shot 2021-06-27 at 1.56.14 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-27 at 1.56.14 PM.png)
+
+#### Modifiability
+
+- Reduce Size of a Module
+  - Split Module
+- Increase Cohesion
+  - Increase Semantic Coherence
+- Reduce Coupling
+  - Encapsulate
+  - Use and Intermediary
+  - Restrict Dependencies
+  - Refactor
+  - Abstract Common Services
+- Defer Binding
+  - An architecture that is suitably equipped to accommodate modifications late in the life cycle will, on average, cost less than an architecture that forces the same modification to be made earlier. The preparedness of the system means that some costs will be zero, or very low, for late life-cycle modifications. This, however, neglects the cost of preparing the architecture for the late binding.
+
+#### Security
+
+- Detect Attacks
+  - Detect Intrusion
+  - Detect Service Denial
+  - Verify Service Integrity
+  - Detect Message Delay
+- Resist Attacks
+  - Identify Actors
+  - Authenticate Actors
+  - Authorize Actors
+  - Limit Access
+  - Limit Exposure
+  - Encrypt Data
+  - Separate Entities
+  - Change Default Settings
+- React to Attacks
+  - Revoke Access
+  - Lock Computer
+  - Inform Actors
+- Recover from Attacks
+  - Maintain Audit Trail
+  - Restore
+    - See Availability
+
+![Screen Shot 2021-06-27 at 1.50.14 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-27 at 1.50.14 PM.png)
+
+#### Testability
+
+- Control and Observe System State
+  - Specialized Interfaces
+  - Record / Playback
+  - Localize State Storage
+  - Abstract Data Sources
+  - Sandbox
+  - Executable Assertions
+- Limit Complexity
+  - Limit Structural Complexity
+  - Limit Nondeterminism
 
