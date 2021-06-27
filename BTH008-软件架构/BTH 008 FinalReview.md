@@ -26,19 +26,19 @@ The software architecture of a system is the set of structures needed to reason 
 
 ### What can you use a software architecture for (2P)   [Ch 2, pp25-33]
 
-1. An architecture will **inhibit or enable a system’s driving quality attributes**.
-2. The decisions made in an architecture allow you to **reason about and manage change as the system evolves**.
-3. The analysis of an architecture **enables early prediction of a system’s qualities**.
-4. A documented architecture **enhances communication among stakeholders**.
-5. The architecture is **a carrier of the earliest and hence most fundamental, hardest-to-change design decisions**.
-6. An architecture **defines a set of constraints on subsequent implementation**.
-7. The architecture **dictates the structure of an organization, or vice versa**.
-8. An architecture can **provide the basis for evolutionary prototyping**.
-9. An architecture is the **key artifact that allows the architect and project manager to reason about cost and schedule**.
-10. An architecture can be created as a transferable, reusable model that form the heart of a product line.
-11. Architecture-based development focuses attention on the assembly of components, rather than simply on their creation.
-12. By restricting design alternatives, architecture channels the creativity of developers, reducing design and system complexity.
-13. An architecture can be **the foundation for training a new team member**.
+1. An architecture will **inhibit or enable a system’s driving quality attributes**. 架构将抑制或提高系统的关键质量属性。
+2. The decisions made in an architecture allow you to **reason about and manage change as the system evolves**. 在架构中做出的决策使得您可以在系统发展时推理和管理更改。
+3. The analysis of an architecture **enables early prediction of a system’s qualities**. 架构分析可以及早预测系统的质量。
+4. A documented architecture **enhances communication among stakeholders**. 文档化的架构增强了利益相关者之间的沟通。
+5. The architecture is **a carrier of the earliest and hence most fundamental, hardest-to-change design decisions**. 架构是最早、因此也是最基本、最难改变的设计决策的载体。
+6. An architecture **defines a set of constraints on subsequent implementation**. 架构定义了一组对后续实现的约束。
+7. The architecture **dictates the structure of an organization, or vice versa**. 架构决定了组织的结构，反之亦然。
+8. An architecture can **provide the basis for evolutionary prototyping**. 架构可以为循序渐进的原型设计提供基础。
+9. An architecture is the **key artifact that allows the architect and project manager to reason about cost and schedule**. 架构是允许架构师和项目经理推测成本和进度的关键工件。
+10. An architecture can be **created as a transferable, reusable model that form the heart of a product line**. 可以创建可转移、可重用的架构模型，构成产品线的核心。
+11. Architecture-based development **focuses attention on the assembly of components, rather than simply on their creation**. 基于架构的开发将注意力集中在组件的组装上，而不是简单地放在它们的创建上。
+12. **By restricting design alternatives, architecture channels the creativity of developers, reducing design and system complexity.** 通过限制设计备选方案，架构可以引导开发人员的创造力，从而降低设计和系统的复杂性。
+13. An architecture can be **the foundation for training a new team member**. 架构可以成为培训新团队成员的基础。
 
 ### software architecture influences from a technical perspective(2P) [Ch 2, pp25-33]
 
