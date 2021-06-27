@@ -98,10 +98,38 @@ A view is a representation of a set of system elements and relations among themâ
 ### availability tactics (6P)  [Ch 5.2 pp 87-95]
 
 - Detect faults
+  - Ping / Echo
+  - Monitor
+  - Heartbeat
+  - Timestamp
+  - Sanity Checking
+  - Condition Monitoring
+  - Voting
+  - Exception Detection
+  - Self-Test
 - Recover from faults
   - Preparation and Repair
+    - Active Redundancy
+    - Passive Redundancy
+    - Spare
+    - Exception Handling
+    - Rollback
+    - Software upgrade
+    - Retry
+    - Ignore Faulty Behavior
+    - Degradation
+    - Reconfiguration
   - Reintroduction
+    - Shadow
+    - State Resychronization
+    - Escalating Restart
+    - Non-Stop Forwarding
 - Prevent faults
+  - Removal from Service
+  - Transactions
+  - Predictive Model
+  - Exception Prevention
+  - Increase Competence Set
 
 ![Screen Shot 2021-06-23 at 7.49.04 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-23 at 7.49.04 PM.png)
 
@@ -114,8 +142,15 @@ A view is a representation of a set of system elements and relations among themâ
 ### modifiability tactic sub-category defer binding (6P) [Ch 7.2 pp 121-125]
 
 - Reduce Size of a Module
+  - Split Module
 - Increase Cohesion
+  - Increase Semantic Coherence
 - Reduce Coupling
+  - Encapsulate
+  - Use and Intermediary
+  - Restrict Dependencies
+  - Refactor
+  - Abstract Common Services
 - Defer Binding
   - An architecture that is suitably equipped to accommodate modifications late in the life cycle will, on average, cost less than an architecture that forces the same modification to be made earlier. The preparedness of the system means that some costs will be zero, or very low, for late life-cycle modifications. This, however, neglects the cost of preparing the architecture for the late binding.
 
@@ -134,6 +169,17 @@ A view is a representation of a set of system elements and relations among themâ
 ![Screen Shot 2021-06-23 at 7.53.21 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-23 at 7.53.21 PM.png)
 
 ### testability tactics (8P)  [Ch 10 pp 168]
+
+- Control and Observe System State
+  - Specialized Interfaces
+  - Record / Playback
+  - Localize State Storage
+  - Abstract Data Sources
+  - Sandbox
+  - Executable Assertions
+- Limit Complexity
+  - Limit Structural Complexity
+  - Limit Nondeterminism
 
 ![Screen Shot 2021-06-23 at 7.53.53 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-23 at 7.53.53 PM.png) 
 
