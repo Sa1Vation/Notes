@@ -186,21 +186,21 @@ A view is a representation of a set of system elements and relations among them�
 
 ### an architectural pattern (3P)  [Ch 13.1 pp 203-205]
 
-An architectural pattern
+An architectural pattern 设计模式
 
-- is a package of design decisions that is found in practice repeatedly,
-- has known properties that permit reuse, and 
-- describe a class of architectures.
+- is a package of design decisions that is found in practice repeatedly, 是一组经常在实践中出现的设计决策
+- has known properties that permit reuse, and  具有可复用性
+- describe a class of architectures. 描述了一类架构
 
-An architectural pattern establishes a relationship between: 
+An architectural pattern establishes a relationship between: 设计模式描述了场景、问题和解决方案之间的关系
 
 - A context
 - A problem
-- A solution
-  - A set of element types (for example, data repositories, processes, and objects)
-  - A set of interaction mechanisms or connectors (for example, method calls, events, or message bus)
-  - A topological layout of the components
-  - A set of semantic constraints covering topology, element behavior, and interaction mechanisms
+- A solution 解决方案包括
+  - A set of element types (for example, data repositories, processes, and objects) 一组元素类型
+  - A set of interaction mechanisms or connectors (for example, method calls, events, or message bus) 一组交互机制或连接器
+  - A topological layout of the components 组件的拓扑结构
+  - A set of semantic constraints covering topology, element behavior, and interaction mechanisms 一组涵盖拓扑、元素行为和交互机制的语义约束
 
  
 
