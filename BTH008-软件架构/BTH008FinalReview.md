@@ -22,7 +22,7 @@ The software architecture of a system is the set of structures needed to reason 
    - *Implementation structure*
    - *Work assignment structure*
 
-![Screen Shot 2021-06-23 at 6.05.13 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/Screen Shot 2021-06-23 at 6.05.13 PM.png)
+![Screen Shot 2021-06-23 at 6.05.13 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628145602.png)
 
 ### What can you use a software architecture for (2P)   [Ch 2, pp25-33]
 
@@ -66,7 +66,7 @@ A view is a representation of a set of system elements and relations among themâ
 - Environment
 - Artifact
 
-![Screen Shot 2021-06-23 at 7.19.55 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/Screen Shot 2021-06-23 at 7.19.55 PM.png)
+![Screen Shot 2021-06-23 at 7.19.55 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628145615.png)
 
 ### coordination model decisions (4P)  [Ch 4.6 pp 73-74]
 
@@ -131,7 +131,7 @@ A view is a representation of a set of system elements and relations among themâ
   - Exception Prevention
   - Increase Competence Set
 
-![Screen Shot 2021-06-23 at 7.49.04 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/Screen Shot 2021-06-23 at 7.49.04 PM.png)
+![Screen Shot 2021-06-23 at 7.49.04 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628145659.png)
 
 ### fault tree analysis (6P)  [ Ch 5, pp 83]
 
@@ -154,7 +154,7 @@ A view is a representation of a set of system elements and relations among themâ
 - Defer Binding
   - An architecture that is suitably equipped to accommodate modifications late in the life cycle will, on average, cost less than an architecture that forces the same modification to be made earlier. The preparedness of the system means that some costs will be zero, or very low, for late life-cycle modifications. This, however, neglects the cost of preparing the architecture for the late binding.
 
-![Screen Shot 2021-06-23 at 7.51.03 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/Screen Shot 2021-06-23 at 7.51.03 PM.png)
+![Screen Shot 2021-06-23 at 7.51.03 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628145707.png)
 
 ### the modifiability tactic Use an intermediary (4P)  [Ch 7.2 pp 121-125,]
 
@@ -166,7 +166,7 @@ A view is a representation of a set of system elements and relations among themâ
 
 ### a general scenario for a Testability quality(4P)  [Ch 10]
 
-![Screen Shot 2021-06-23 at 7.53.21 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/Screen Shot 2021-06-23 at 7.53.21 PM.png)
+![Screen Shot 2021-06-23 at 7.53.21 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628145713.png)
 
 ### testability tactics (8P)  [Ch 10 pp 168]
 
@@ -181,7 +181,7 @@ A view is a representation of a set of system elements and relations among themâ
   - Limit Structural Complexity
   - Limit Nondeterminism
 
-![Screen Shot 2021-06-23 at 7.53.53 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/Screen Shot 2021-06-23 at 7.53.53 PM.png) 
+![Screen Shot 2021-06-23 at 7.53.53 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628145719.png) 
 
 ### ===Chapter 13===
 
@@ -228,7 +228,7 @@ An architectural pattern establishes a relationship between:
   - Bound Queue Sizes
   - Schedule Resources
 
-![Screen Shot 2021-06-27 at 1.56.14 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/Screen Shot 2021-06-27 at 1.56.14 PM.png)
+![Screen Shot 2021-06-27 at 1.56.14 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628145724.png)
 
 #### Modifiability
 
@@ -270,7 +270,7 @@ An architectural pattern establishes a relationship between:
   - Restore
     - See Availability
 
-![Screen Shot 2021-06-27 at 1.50.14 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/Screen Shot 2021-06-27 at 1.50.14 PM.png)
+![Screen Shot 2021-06-27 at 1.50.14 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628145729.png)
 
 #### Testability
 
