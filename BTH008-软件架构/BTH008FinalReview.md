@@ -208,6 +208,22 @@ An architectural pattern establishes a relationship between: 设计模式描述�
 
 ### Run-time/Development time quality attribute (4P)  [From the lectures]
 
+- Run-time quality
+  - Performance (Latency, Speed)
+  - Availability (Failure Rate, Downtime Percentage)
+  - Interoperability (Exchange Infomation Effectiveness)
+  - Security (Confidentiality, Integrity, Availability)
+  - Usability (Time cost of Accomplish a Task)
+  - *Scalability
+  - *Safety
+- Development-time quality (observable during development)
+  - Modifiability (Ease of make a change)
+  - Testability (Same test can cover more code of software)
+  - *Variability
+  - *Portability
+  - *Scalability
+  - *Development distributability
+
 ### the tactics with the correct quality (8P)  [Ch7/8/9/10, Performance, Modifiability, Security, Testability]
 
 #### Performance
