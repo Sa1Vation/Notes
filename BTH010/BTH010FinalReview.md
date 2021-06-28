@@ -220,7 +220,7 @@ Initialization steps <-- reverse --> Shutdown steps
 
 #### Bézier curve
 
-- The only drawback is that we need to store two more points(T1 and T2)![Screen Shot 2021-01-17 at 2.21.53 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-01-17 at 2.21.53 PM.png)
+- The only drawback is that we need to store two more points(T1 and T2)![Screen Shot 2021-01-17 at 2.21.53 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150914.png)
 
 ## Artificial Intelligence
 
@@ -233,7 +233,7 @@ Sense -> Think -> Act
 - An FSM consists of stated, transitions between states, and conditions for a transition
 - An agent can only be in one state at a time
 - Each state has its own logic
-- Execute logic of current state -> check for transition![Screen Shot 2021-01-17 at 2.25.53 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-01-17 at 2.25.53 PM.png)
+- Execute logic of current state -> check for transition![Screen Shot 2021-01-17 at 2.25.53 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150918.png)
 
 ### Path Finding
 

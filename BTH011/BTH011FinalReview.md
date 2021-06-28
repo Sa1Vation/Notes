@@ -57,9 +57,9 @@ Return: A non-negative integer, a socket descriptor
 
 ### API - bind(int socked, struct sockaddr*, int socklen_t)
 
-![Screen Shot 2021-06-14 at 10.31.12 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-14 at 10.31.12 PM.png)
+![Screen Shot 2021-06-14 at 10.31.12 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150827.png)
 
-![Screen Shot 2021-06-14 at 10.31.20 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-14 at 10.31.20 PM.png)
+![Screen Shot 2021-06-14 at 10.31.20 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150830.png)
 
 #include <string.h>
 /* ANSI C */ 
@@ -97,9 +97,9 @@ Const char *inet_ntop(int family, const struct *addrptr, char *strptr, size_t le
 
 ## L02 UDP Sockets
 
-### ![Screen Shot 2021-06-14 at 10.37.21 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-14 at 10.37.21 PM.png)
+### ![Screen Shot 2021-06-14 at 10.37.21 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150835.png)
 
-![Screen Shot 2021-06-14 at 10.38.17 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-14 at 10.38.17 PM.png)
+![Screen Shot 2021-06-14 at 10.38.17 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150838.png)
 
 ### Send a Message with UDP
 
@@ -138,7 +138,7 @@ ssize_t read(int fd, void *buf, size_t count);
 
 ## L03 TCP Sockets
 
-![Screen Shot 2021-06-14 at 11.01.39 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-14 at 11.01.39 PM.png)
+![Screen Shot 2021-06-14 at 11.01.39 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150843.png)
 
 ### API - connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen)
 
@@ -175,7 +175,7 @@ int getpeername(int sockfd, struct sockaddr *peeraddr, socklen_t *peerlen);
 - Signal driven (SIGIO) 数据准备完成后以信号通知用户进程
 - Asynchronous I/O (POSIX aio_ functions) 异步处理
 
-![Screen Shot 2021-06-15 at 6.35.43 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-15 at 6.35.43 PM.png)
+![Screen Shot 2021-06-15 at 6.35.43 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150848.png)
 
 ### What does 'Ready' mean?
 
@@ -190,7 +190,7 @@ int getpeername(int sockfd, struct sockaddr *peeraddr, socklen_t *peerlen);
   - A socket using non-blocking connect has completed the connection, or the connect has failed. i.e. after connect()
   - A socket error is pending
 
-![Screen Shot 2021-06-15 at 6.49.22 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-15 at 6.49.22 PM.png)
+![Screen Shot 2021-06-15 at 6.49.22 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150852.png)
 
 ### Socket timeout
 
@@ -198,7 +198,7 @@ int getpeername(int sockfd, struct sockaddr *peeraddr, socklen_t *peerlen);
 2. Select
 3. SO_RCVTIMEO, SO_SNDTIMEO - setsockopt()
 
-![Screen Shot 2021-06-15 at 7.14.30 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-06-15 at 7.14.30 PM.png)
+![Screen Shot 2021-06-15 at 7.14.30 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150855.png)
 
 ## L06 Multicast
 
