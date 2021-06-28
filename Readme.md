@@ -18,8 +18,10 @@
 
 [BTH011-Computer Network](./BTH011/BTH011FinalReview.md )
 
-### QA：Gitee出现文件违规
+### QA：Gitee出现文件违规或者Github无法访问
 
-github镜像仓库：[Notes](https://github.com/Sa1Vation/Notes)
+Github镜像仓库：[Notes](https://github.com/Sa1Vation/Notes)
+
+Gitee镜像仓库：[Notes](https://gitee.com/Sa1vation/notes)
 
 ![e2281292e2988ece7194edc0f846c535](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150125.jpeg)
