@@ -43,7 +43,6 @@ The software architecture of a system is the set of structures needed to reason 
 ### software architecture influences from a technical perspective(2P) [Ch 2, pp25-33]
 
 - Organizational influence:
-  - 
 
 ## B: View Ch 18-20
 
