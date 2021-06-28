@@ -107,7 +107,7 @@
 
 ### Complexity Classes
 
-![img](https://img-blog.csdn.net/20151015164207766)
+![img](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150649.jpeg)
 
 - P problem
 - NP problem
@@ -131,6 +131,6 @@
 
 ### Suffix arrays and suffix trees
 
-![Screen Shot 2021-01-14 at 1.33.27 PM](/Users/salvation/Desktop/Screen Shot 2021-01-14 at 1.33.27 PM.png)
+![Screen Shot 2021-01-14 at 1.33.27 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150654.png)
 
-![Screen Shot 2021-01-14 at 1.33.41 PM](/Users/salvation/Desktop/Screen Shot 2021-01-14 at 1.33.41 PM.png)
+![Screen Shot 2021-01-14 at 1.33.41 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150658.png)

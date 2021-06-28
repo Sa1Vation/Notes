@@ -83,7 +83,7 @@ Goals -> Intention -> Action Specification -> Execution -> Perception -> Interpr
 
 3. The main related contents for the area of the study 
 
-   1. ![image-20210116201729162](/Users/salvation/Library/Application Support/typora-user-images/image-20210116201729162.png)
+   1. ![image-20210116201729162](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150556.png)
       - Academic Discipline
       - Ergonomics
       - Psychology/Congnitive Science
@@ -105,9 +105,9 @@ Goals -> Intention -> Action Specification -> Execution -> Perception -> Interpr
 
 4. Understanding of human memory, limitations and effective learning 
 
-   1. ![Screen Shot 2021-01-16 at 8.20.03 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-01-16 at 8.20.03 PM.png)
-   2. ![Screen Shot 2021-01-16 at 8.20.37 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-01-16 at 8.20.37 PM.png)
-   3. ![Screen Shot 2021-01-16 at 8.21.59 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-01-16 at 8.21.59 PM.png)
+   1. ![Screen Shot 2021-01-16 at 8.20.03 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150603.png)
+   2. ![Screen Shot 2021-01-16 at 8.20.37 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150606.png)
+   3. ![Screen Shot 2021-01-16 at 8.21.59 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150609.png)
 
 5. Knowledge categories and properties of learning and presentations
 
@@ -133,8 +133,8 @@ Goals -> Intention -> Action Specification -> Execution -> Perception -> Interpr
 
 6. Cognitive Communication models and the classical Communication model in the real world.
 
-   1. Classical (Shannon's) Communication model![Screen Shot 2021-01-16 at 8.32.54 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-01-16 at 8.32.54 PM.png)
-   2. Cognitive Communication model![Screen Shot 2021-01-16 at 8.33.28 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-01-16 at 8.33.28 PM.png)
+   1. Classical (Shannon's) Communication model![Screen Shot 2021-01-16 at 8.32.54 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150614.png)
+   2. Cognitive Communication model![Screen Shot 2021-01-16 at 8.33.28 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150617.png)
 
 7. Understanding at least 10 principles for design based on the cognitive study
 
@@ -170,7 +170,7 @@ Goals -> Intention -> Action Specification -> Execution -> Perception -> Interpr
 
 10. Context study from different perspectives (scientific, sociotechnical, and participatory design)
 
-11. The triangle model of activity theory and how to apply it to interactive system design![Screen Shot 2021-01-16 at 9.13.53 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-01-16 at 9.13.53 PM.png)
+11. The triangle model of activity theory and how to apply it to interactive system design![Screen Shot 2021-01-16 at 9.13.53 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150624.png)
 
 12. What Important knowledge to learn as a software engineer
 
@@ -193,7 +193,7 @@ Goals -> Intention -> Action Specification -> Execution -> Perception -> Interpr
       - Stakeholders involved in design
     - Agile methods
 
-14. Usability tree model and how to measure usability![Screen Shot 2021-01-16 at 9.26.50 PM](/Users/salvation/Library/Application Support/typora-user-images/Screen Shot 2021-01-16 at 9.26.50 PM.png)
+14. Usability tree model and how to measure usability![Screen Shot 2021-01-16 at 9.26.50 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210628150628.png)
 
     - Learnability: pick novice users of system, measure time to perform certain tasks. 
     - Efficiency: pick expert users, measure time to perform typical tasks. 
