@@ -10,6 +10,8 @@
 
 [BTH006-Pratical Requirements Engineering](./BTH006-实用需求工程/BTH006FinalReview.md )
 
+[BTH007-Outsourcing Development by Case Study](./BTH007/BTH007FinalReview.md)
+
 [BTH008-Software Architecture](./BTH008-软件架构/BTH008FinalReview.md )
 
 [BTH009-Applied Software Project Management](./BTH009/BTH009FinalReview.md )
