@@ -202,7 +202,20 @@ An architectural pattern establishes a relationship between: 设计模式描述�
   - A topological layout of the components 组件的拓扑结构
   - A set of semantic constraints covering topology, element behavior, and interaction mechanisms 一组涵盖拓扑、元素行为和交互机制的语义约束
 
- 
+- **Module Patterns**
+  - Layered Pattern
+- **Component-and-Connector Patterns**
+  - Broker Pattern
+  - Model-View-Controller Pattern
+  - Pipe-and-Filter Pattern
+  - Client-Server Pattern
+  - Peer-to-Peer Pattern
+  - Service-Oriented Architecture Pattern
+  - Publish-Subscribe Pattern
+  - Shared-Data Pattern
+- **Allocation Patterns**
+  - Map-Reduce Pattern
+  - Multi-tier Pattern
 
 ### ===Chapter 4-11===
 
