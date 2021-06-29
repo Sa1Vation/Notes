@@ -6,6 +6,11 @@
 
 The software architecture of a system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both.
 
+### Summary
+
+1. Every system has a software architecture, but this architecture may be documented and disseminated, or it may not be.
+2. There is no such thing as an inherently good or bad architecture. Architec- tures are either more or less fit for some purpose.
+
 ### Structures categories (6P)  [Ch 1, pp10-17]
 
 1. *Module structures* - Module describes how the system is to be structured as a set of code or data units that have to be constructed or procured.
