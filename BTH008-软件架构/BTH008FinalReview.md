@@ -50,7 +50,19 @@ The software architecture of a system is the set of structures needed to reason 
 
 A view is a representation of a set of system elements and relations among them—not all system elements, but those of a particular type.
 
+A view has:
 
+1. Elements: All elements in the view must have a corresponding part in the view definition
+2. Relations: Only relations that meet the selection criteria must be in the view
+3. Properties: Properties must have values in the view
+4. Selection criteria: A selection criterion for what kind of elements, relations and properties to include, Selection criteria can exclude certain elements or relations from the view.
+
+ A view is consistent with its definition when: 
+
+- All elements that fulfills the selection criterion is in the view
+- All relations that fulfills the selection criterion is in the view
+- That all properties that fulfills the selection criterion is in the view
+- THAT NO addtional elements, relation or properties that does not meet the selection criterion is in the view
 
 ## C: Quality Attribute Ch4-12, 14
 
@@ -71,11 +83,19 @@ A view is a representation of a set of system elements and relations among them�
 
 - Identifying the elements of the system that must coordinate, or are prohibited from coordinating.
 - Determining the properties of the coordination
-  - such as timeliness, cur-rency, completeness, correctness, and consistency.
+  - such as timeliness, currency, completeness, correctness, and consistency.
 - Choosing the communication mechanisms (between systems, between our system and external entities, between elements of our system) that realize those properties. 
   - Important properties of the communication mechanisms include stateful versus stateless, synchronous versus asynchronous, guar-anteed versus nonguaranteed delivery, and performance-related properties such as throughput and latency.
 
 ### asynchronous communication (4P)  [Ch 4.6 pp 73-74]
+
+Asynchronous communication is any form of communication that doesn't require both people to be available at the same time — email is a classic example. Asynchronous communication simply means that the person you are “talking” to isn't consuming the information at the same time as you are producing it.
+
+Synchronous communication is when you're talking with someone face to face - or on the phone, on a video call, or even chatting on Slack. You're both present at the same time, even if you aren't physically in the same space.
+
+Asynchronous communication does not block the program thread until a response is ready.
+
+Both asynchronous communication and synchronous communication can be used in the same system. 
 
 ### data-model (6P)  [ Ch 4.6 pp 74]
 
@@ -313,3 +333,18 @@ An architectural pattern establishes a relationship between: 设计模式描述�
   - Limit Structural Complexity
   - Limit Nondeterminism
 
+### General Secenario
+
+![Screen Shot 2021-06-29 at 3.35.56 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210629153656.png)
+
+![Screen Shot 2021-06-29 at 3.37.31 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210629153736.png)
+
+![Screen Shot 2021-06-29 at 3.38.00 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210629153805.png)
+
+![Screen Shot 2021-06-29 at 3.38.24 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210629153828.png)
+
+![Screen Shot 2021-06-29 at 3.38.53 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210629153903.png)
+
+![Screen Shot 2021-06-29 at 3.39.24 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210629153929.png)
+
+![Screen Shot 2021-06-29 at 3.39.45 PM](https://gitee.com/Sa1vation/my-pic-bed/raw/master/typora_imgs/20210629153949.png)
