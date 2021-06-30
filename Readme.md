@@ -20,6 +20,8 @@
 
 [BTH011-Computer Network](./BTH011/BTH011FinalReview.md )
 
+[编译原理读书报告](./编译原理/编译原理读书报告.md)
+
 ### QA：Gitee出现文件违规或者Github无法访问
 
 Github镜像仓库：[Notes](https://github.com/Sa1Vation/Notes)
