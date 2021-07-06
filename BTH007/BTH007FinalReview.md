@@ -28,6 +28,17 @@
 - Coordination and communication complexity
 - Disparities (uneven) in work approaches
 
+### Negative impact of transfers
+
+- Loss of knowledge within the product
+- Temporary productivity decrease
+- Initial reduction in scope of delivery
+- Temporal decrease in quality
+- Growing product entropy/complexity; technical degradation
+- Lack of co-located expertise of all system’s domains
+- Prolongation of experts from original site for solving difficult problems
+- Demands of more detailed requirements specification
+
 ### Transfer models
 
 - Phase-based model - most popular model
@@ -52,6 +63,14 @@
   - Innovation and shared best practice
   - Improved resource allocation
 - GSE cons:
+  - Loss of knowledge within the product
+  - Temporary productivity decrease
+  - Initial reduction in scope of delivery
+  - Temporal decrease in quality
+  - Growing product entropy/complexity; technical degradation
+  - Lack of co-located expertise of all system’s domains
+  - Prolongation of experts from original site for solving difficult problems
+  - Demands of more detailed requirements specification
 
 ### Achieving the benefits: Cost
 
@@ -96,7 +115,11 @@
   - “Knowledge seekers” approach
   - Talent around the world is expensive
 
-## Suitable development methods
+## Project Management and Coordination in GSE
+
+### What is a project?
+
+A project is a temporary endeavor undertaken to  create a unique product or service.
 
 ### Major challenges - 3C
 
@@ -115,6 +138,12 @@
 - Control
   - Lack of process transparency
   - Lack of progress visibility
+
+### Coordinating mechanisms
+
+- Standardization
+- Direct supervision
+- Mutual adjustment
 
 ## Cultural management 
 
