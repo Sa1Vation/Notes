@@ -22,9 +22,9 @@
 
 [编译原理读书报告](./编译原理/编译原理读书报告.md)
 
-[Spring Cloud学习笔记](./SpringCloud/SpringCloudLearning.md)
+[Spring Cloud学习笔记（持续更新）](./SpringCloud/SpringCloudLearning.md)
 
-[Go语言学习笔记](./Golang/GolangLearning.md)
+[Go语言学习笔记（持续更新）](./Golang/GolangLearning.md)
 
 ### QA：Gitee出现文件违规或者Github无法访问
 
