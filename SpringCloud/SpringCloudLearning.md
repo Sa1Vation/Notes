@@ -50,6 +50,10 @@
   - commandKey：使用缓存的方法名
   - cacheKeyMethod
 
+#### @CacheKey
+
+- 指定缓存的key，可以指定参数或指定参数中的属性值为缓存key，cacheKeyMethod还可以通过返回String类型的方法指定；
+
 #### 缓存使用过程中的问题
 
 - 在缓存使用过程中，我们需要在每次使用缓存的请求前后对HystrixRequestContext进行初始化和关闭，否则会出现如下异常：
@@ -60,7 +64,25 @@
 
 #### @HystrixCollapser
 
-- 
+- 添加在Service层方法上，合并多次请求
+- 参数：
+  - batchMethod：用于设置请求合并的方法
+  - collapserProperties：请求合并属性
+  - timerDelayInMilliseconds：控制多少时间合并一次请求
 
+## Spring Cloud OpenFeign
 
+- 基于Ribbon和Hystrix的声明式服务调用，拥有负载均衡和服务容错功能
+
+## Spring Cloud Zuul
+
+## Spring Cloud Gateway
+
+## 分布式事务
+
+### 2PC
+
+### 3PC
+
+### T
 

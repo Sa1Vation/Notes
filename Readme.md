@@ -26,6 +26,8 @@
 
 [Go语言学习笔记（持续更新）](./Golang/GolangLearning.md)
 
+[Java进阶——分布式架构（持续更新）](./ad-java/ad-java.md)
+
 ### QA：Gitee出现文件违规或者Github无法访问
 
 Github镜像仓库：[Notes](https://github.com/Sa1Vation/Notes)
