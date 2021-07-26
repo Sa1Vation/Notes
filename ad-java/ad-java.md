@@ -197,5 +197,204 @@ translog
 
 #### 高性能
 
+因为redis基于内存存储，所以可以提高读写速度。
+
 #### 高并发
 
+同上。
+
+### 使用了缓存的不良后果
+
+- 缓存数据库双写不一致
+- 缓存雪崩（缓存系统突然宕机，高峰期请求全落数据库，把数据库打死）
+- 缓存穿透（比如被恶意攻击，查的全是不存在的key，请求也会全部落到数据库）
+- 缓存击穿（缓存失效的一瞬间，热点数据的全部请求都落到数据库，数据库被打死）
+
+### Redis 和 Memcached 有什么区别？Redis 的线程模型是什么？为什么 Redis 单线程却能支撑高并发？
+
+- Key：Redis是个单线程工作模型
+- Redis和Memcached的区别：
+  - Redis支持复杂的数据结构
+  - Redis原生支持集群模式（Redis Cluster）
+  - Redis单核，存储小数据<100k的性能更高；Memcached多核，在存储大数据时性能更高。
+- Redis的线程模型
+  - Redis内部使用的文件事件处理器叫`file event handler`，这个文件处理器是单线程的，它采用了IO Multiplexing机制同时监听多个socket，将产生事件的socket压入内存队列，事件分派器根据文件事件类型来选择对应的事件处理器。
+  - 文件事件处理器的结构：
+    - 多个socket
+    - IO多路复用程序
+    - 文件事件分派器
+    - 事件处理器（连接应答处理器，命令请求处理器，命令回复处理器）
+- 为啥Redis单线程支撑高并发
+  - 纯内存操作（暴力，直接提升读写速度）
+  - 核心基于Non-blocking IO Multiplexing（底层上采用支持并发的IO模型）
+  - c语言实现（程序效率高）
+  - 单线程反而避免了多线程的频繁上下文切换，预防了多线程可能产生的竞争问题（？这个就有待考证了）
+  - 注：redis 6.0开始引入多线程，socket的IO操作占用了大量的cpu时间片，不得不把socket IO操作拿出来做成多线程，但是执行命令还是单线程（避免系统复杂度过高）
+
+### Redis的数据类型以及适用场景
+
+- Strings
+
+  最简单的类型，KV缓存
+
+  ```bash
+  set college zjut
+  get college
+  ```
+
+- Hashes
+
+  存储的是一个map，或者叫一个对象（没有嵌套其他对象）
+
+  ```bash
+  hset person name salvation
+  hset person age 22
+  hset person id 1
+  hget person name
+  ```
+
+- Lists
+
+  有序列表
+
+  ```bash
+  lrange mylist 0 -1 #lrange表示范围读取，下标类型于python
+  lpush mylist 1
+  lpush mylist 2 3 4
+  rpop mylist #1
+  ```
+
+- Sets
+
+  无序集合，实现在多台机器上一个自动去重的操作，求交集并集
+
+  ```bash
+  sadd myset 1 #add
+  smembers myset #select all
+  sismember myset 3 #if is a member of
+  srem myset 1 #remove
+  scard myset #count
+  spop myset #remove one randomly
+  smove youset myset 2 #move elements from one set to anonther
+  sinter youset myset #figure out the same part
+  sunion youset myset #combine
+  sdiff youset myset #elements in youset but not in myset
+  ```
+
+- Sorted Sets
+  有序集合，实现排序
+
+  ```bash
+  zadd board zhangsan
+  zadd board lisi
+  zadd board wangwu
+  zadd board zhaoliu
+  # 获取排名前三的用户（默认是升序，所以需要 rev 改为降序）
+  zrevrange board 0 3
+  # 获取某用户的排名
+  zrank board zhaoliu
+  ```
+
+### Redis的过期策略、内存策略、手撕LRU
+
+#### Redis过期策略
+
+**定期删除+惰性删除**
+
+- 定期删除
+
+  默认每隔100ms就随机抽查设置了过期时间的key，过期了就删除。不能全查，开销太大。
+
+- 惰性删除
+
+  获取key的时候，若已经过期，就删除，不返回
+
+如果在以上机制的基础上，redis还是快耗尽了内存，就要走内存淘汰机制
+
+#### 内存淘汰机制
+
+- noeviction：写不下就不写了
+- allkeys-lru：在全部键空间中，删除最近最少使用的key
+- allkeys-random：在全部键空间中，随机删
+- volatile-lru：在设置了过期时间的键空间中，删除最近最少使用的key
+- volatile-random：在设置了过期时间的键空间中，随机删
+- volatile-ttl：在设置了过期时间的键空间中，优先删最早过期的
+
+#### 手撕LRU
+
+两种基本思路：在读取的时候要改变被读取项的位置或者标记
+
+### 保证Redis的高并发和高可用、主从复制原理、哨兵机制
+
+#### 主从架构、读写分离——保证读高并发
+
+读请求走从节点，写请求走主节点同步给从节点。轻松实现水平扩容，增加从节点的数量就可以支撑读高并发。
+
+#### Redis replication的核心机制
+
+- 主节点采用异步方式复制数据到从节点
+- 从节点在做复制的时候不会阻塞自己的查询操作，会暂时使用旧的数据继续提供服务。待数据复制完成之后会删除旧的数据集，加载新的数据集，此时会暂时停止服务。
+
+注意：
+
+- 必须开启master node的持久化机制，把数据落盘，否则master节点宕机再重启会丢失所有数据，然后slave节点也会跟着清空
+- 还要做其他备份方案，确保master node重启之后有数据。即使有哨兵机制——主从转换作为高可用方案，也有可能会丢失所有数据：比如master node重启太快，哨兵还没检测到master failure就重启了，如果没有其他备份方案一样会丢失所有数据。
+
+Replication的过程：
+
+1. 启动slave node的时候，它会发送一个psync命令给master node。
+2. 如果是初次连接，会触发一次full resynchronization全量复制。master会启动一个线程来生成一份rdb快照文件，（太长了待续）
+
+#### Redis的高可用机制
+
+- Slave node挂了，不影响高可用，其他node照样能读
+- Master node挂了，触发主备切换机制，故障转移，快速恢复可用性
+
+### Redis的持久化方式、优缺点、底层实现
+
+持久化主要是为了做灾难恢复、数据恢复
+
+#### 持久化方式
+
+- RDB：RDB持久化机制，对redis中的数据执行周期性的持久化（周期性生成rdb快照）
+- AOF：AOF机制对写入命令做日志，以append-only的模式写入到一个日志文件中，可以通过回放AOF日志来构建数据集
+
+持久化之后要备份到别的地方去，比如企业冷储存，阿里云等云服务。
+
+同时开启时redis会选择用AOF重构数据集，因为完整度更高。
+
+RDB优缺点：
+
+- 生成每一时刻的数据快照，适合做冷备份。
+- 对读写服务影响小，只要fork一个子进程来执行，从内存读取，写到磁盘。
+- 相比较于AOF来说，RDB来恢复redis会更快。
+- 丢失数据多，一般来说RDB备份5分钟执行一次，一旦宕机会丢失5分钟数据。
+- RDB 每次在fork子进程来执行 RDB 快照数据文件生成的时候，如果数据文件特别大，可能会导致对客户端提供的服务暂停数毫秒，或者甚至数秒。（？）
+
+AOF优缺点：
+
+- AOF丢失数据少，一般AOF每隔一秒执行一次fsync，把数据落盘，最多丢失一秒的数据。
+- 日志文件以append-only模式写入，没有磁盘寻址开销，写入性能非常高，文件不容易破损，即使破损也是尾部出问题。
+- AOF日志文件过大会出现重写，但不影响客户端读写。rewrite log的时候会压缩指令，生成一份新的日志文件，替换老的。
+- 可读性强，没有发生rewrite前可以手动修改指令。
+- AOF日志会比RDB文件大。（包含指令和重复指令）
+- AOF开启后会影响写入QPS。
+- 方法复杂度高，容易出bug。（恢复不出一模一样的数据集）
+
+### Redis哨兵集群高可用
+
+#### Sentinel组件
+
+- 集群监控：监控master和slave是否正常工作
+- 消息通知：如果某个redis实例故障，哨兵负责发送报警给管理员
+- 故障转移：判断一个master node宕机，需要majority哨兵同意
+- 配置中心：如果故障转移发生，通知所有客户端新的master地址
+
+注意：哨兵作为redis集群的高可用保障机制，本身也是分布式的，按理说哨兵集群的可用性应该大于等于redis集群的可用性，才能保障redis集群的高可用。
+
+#### 哨兵的核心知识
+
+- 哨兵至少需要3个实例来保证健壮性（2个实例的话down掉一个就没法选举了）
+- 不保证数据0丢失，只保证高可用
+
+#### Redis主备切换导致数据丢失问题
