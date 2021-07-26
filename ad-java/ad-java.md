@@ -113,12 +113,89 @@
   ##### RabbitMQ
 
   - 生产者弄丢了数据
+    - 事务机制（同步，性能低）
+    - confirm机制 （异步）
   - MQ弄丢了数据
+    - 数据落盘，开启持久化
   - 消费者弄丢了数据
+    - 关闭自动ACK，处理完再ACK
+
+  ##### Kafka
+
+  - 生产者弄丢数据
+    - 只要设置了`acks=all`就不可能丢失，必须得不断重试写入每个replica
+  - Kafka弄丢数据
+    - 给topic设置`replication.factor`参数，必须大于1，每个partition至少有两个副本
+    - 给Kafka服务器端设置`min.insync.replicas`参数，必须大于1，每个leader至少感知到有一个follower和自己保持联系
+    - 给producer端设置`acks=all`，每条数据必须是写入所有replica后才能认为写入成功
+    - 给producer端设置`retries=MAX`，一旦写入失败，就无限重试
+  - 消费者弄丢数据
+    - 关闭自动提交offset
 
 - #### 如何保证消息的顺序性？
 
+  ##### RabbitMQ
+
+  - 拆分队列，每一个队列对应一个消费者，有序消息进入同一个队列
+
+  ##### Kafka
+
+  - 到同一个内存队列
+
 - #### 如何解决消息队列的延时以及过期失效问题？消息队列满了以后该怎么处理？
 
+  - 大量消息挤压
+    - 原因预测：消费者挂了，或无法消费
+    - 紧急扩容：
+      1. 新建一个topic，partition是原来的十倍
+      2. 写一个临时分发程序，把消息均匀轮询分发到十倍的partition
+      3. 征用10倍的机器资源来部署comsumer
+
 - #### 如果让你写一个消息队列，该如何进行架构设计啊？
+
+  - 可伸缩性
+  - 持久化
+  - 高可用
+  - 数据0丢失
+
+## 搜索引擎
+
+### ES分布式架构原理
+
+#### Index -> Type -> mapping -> document -> field
+
+#### Replica Shard
+
+### ES写入数据的工作原理
+
+#### 程序级别原理
+
+write request -> coordinate node --router--> node(with primary shard) --synchronize--> replica node -> response
+
+read request -> any node -> hashed doc id --router(load balanced with round robin)--> shard --response(to coodinate node)--> response
+
+#### 操作系统级别原理
+
+write request-> memory buffer --(full or a period of time)--> os cache (can be searched since here) -> segment file
+
+translog
+
+### 大数据场景下（数十亿级别）提升查询效率
+
+1. 万变不离其中
+   - 无脑加内存，把更多的内存留给filesystem cache
+   - 把索引留在内存里，查到对应记录之后根据doc id去hbase/mysql读取完整数据
+2. 数据预热
+   - 写个程序把热点数据都刷到filesystem cache里
+3. 冷热分离
+4. 别用关联查询
+5. 分页性能优化
+
+## 缓存
+
+### 项目中缓存是如何使用的
+
+#### 高性能
+
+#### 高并发
 
