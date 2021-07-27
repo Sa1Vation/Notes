@@ -398,3 +398,72 @@ AOF优缺点：
 - 不保证数据0丢失，只保证高可用
 
 #### Redis主备切换导致数据丢失问题
+
+- 异步复制导致数据丢失
+
+  master的数据还没复制到slave就宕机了，数据丢失
+
+- 脑裂导致数据丢失
+
+  master突然脱离正常网络，实际上还在运行，但是哨兵认为master宕机了，开启选举，集群里出现了两个master，这就是脑裂。
+
+  client继续像旧的master写入数据，当旧的master作为slave跟随新的master时，这部分数据丢失。
+
+#### 数据丢失解决
+
+```bash
+# 至少有一个slave可写
+min-slaves-to-write 1
+# 当master复制数据到slave的延迟大于10s，master就停止接收请求，最多丢失10s数据
+min-slaves-max-lag 10
+```
+
+#### sdown和odown机制
+
+- sdown是主观宕机，一个哨兵自己觉得一个master宕机了，即ping master超过 `is-master-down-after-milliseconds`。
+- odown是客观宕机，quorum数量的哨兵都觉得一个master宕机了，即收到quorum数量其他哨兵发出的master sdown的消息。
+
+#### 哨兵集群的自动发现机制
+
+通过Redis的`pub/sub`系统实现，每个哨兵会往`__sentinel__:hello`这个channel里发消息，内容是自己的host、ip和runid还有对master的监控配置。其他所有哨兵都能消费到这个消息。
+
+#### slave配置的自动修正
+
+- 如果slave要成为潜在的master候选人，哨兵会确保slave复制现有的master的数据
+- 如果slave连接到了错误的master，会被哨兵纠正
+
+#### slave->master选举算法
+
+如果master被认为odown，而且majority数量的哨兵都允许主备切换，那某个哨兵就会执行主备切换操作
+
+此时首先要选举一个 slave 来，会考虑 slave 的一些信息：
+
+- 跟 master 断开连接的时长
+- slave 优先级
+- 复制 offset
+- run id
+
+如果一个 slave 跟 master 断开连接的时间已经超过了 down-after-milliseconds 的 10 倍，外加 master 宕机的时长，那么 slave 就被认为不适合选举为 master。
+接下来会对 slave 进行排序：
+
+- 按照 slave 优先级进行排序，slave priority 越低，优先级就越高。
+- 如果 slave priority 相同，那么看 replica offset，哪个 slave 复制了越多的数据，offset 越靠后，优先级就越高。
+- 如果上面两个条件都相同，那么选择一个 run id 比较小的那个 slave。
+
+#### quorum和majority
+
+#### configuration epoch
+
+#### configuration传播
+
+### Redis cluster
+
+主要是针对**海量数据+高并发+高可用**的场景。
+
+结构：n个master，每个master上跟随m个slave。
+
+主要优点：支持横向拓展，实现更大容量的缓存。
+
+#### 一致性Hash算法
+
+缓存倾斜——虚拟节点解决
