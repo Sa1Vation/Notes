@@ -29,6 +29,7 @@
 - 添加在Service层方法上做服务降级
 
 - 参数：
+  
   - fallbackMethod：指定服务降级的处理方法
   - ignoreExceptions：忽略某些异常，不发生降级
   - commandKey：命令名称，用于区分命令
@@ -85,4 +86,3 @@
 ### 3PC
 
 ### T
-
